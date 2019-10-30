@@ -16,9 +16,7 @@ const Search = ({navigation, drinks, search, loading}) => {
   };
 
   useEffect(() => {
-    if (searchInput) {
-      search(searchInput);
-    }
+    search(searchInput);
   }, [search, searchInput]);
 
   return (

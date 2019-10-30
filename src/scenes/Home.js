@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text, StyleSheet, Image} from 'react-native';
+import {Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import images from '../constants/images';
 import {SCREENS} from '../navigation';
 import GradientBackground from '../components/GradientBackground';
@@ -35,7 +34,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingVertical: 15,
     paddingHorizontal: 20,
-    width: '100%',
+    // width: '90%',
+    // maxWidth: 250,
   },
   searchIcon: {
     width: 15,
