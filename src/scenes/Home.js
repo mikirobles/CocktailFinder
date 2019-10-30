@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingVertical: 15,
     paddingHorizontal: 20,
-    // width: '90%',
-    // maxWidth: 250,
   },
   searchIcon: {
     width: 15,
