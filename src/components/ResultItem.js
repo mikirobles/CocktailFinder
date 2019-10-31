@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 const ResultItem = ({image, name}) => {
@@ -8,6 +9,16 @@ const ResultItem = ({image, name}) => {
       <Text style={styles.name}>{name}</Text>
     </View>
   );
+};
+
+ResultItem.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+};
+
+ResultItem.defaultProps = {
+  image:
+    'https://e-fisiomedic.com/wp-content/uploads/2013/11/default-placeholder-300x300.png',
 };
 
 const styles = StyleSheet.create({

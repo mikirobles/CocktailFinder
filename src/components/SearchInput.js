@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -14,7 +15,7 @@ const SearchInput = ({value, onChange, onClear, onBack}) => {
 
   return (
     <View style={styles.container}>
-      {!value || !focused ? (
+      {onBack && (!value || !focused) ? (
         <TouchableOpacity style={styles.backBtn} onPress={onBack}>
           <Image
             resizeMode="contain"
@@ -32,13 +33,20 @@ const SearchInput = ({value, onChange, onClear, onBack}) => {
         onBlur={() => setFocused(false)}
         onFocus={() => setFocused(true)}
       />
-      {value ? (
+      {onClear && value ? (
         <TouchableOpacity style={styles.clearBtn} onPress={onClear}>
           <Text style={styles.clearText}>Clear</Text>
         </TouchableOpacity>
       ) : null}
     </View>
   );
+};
+
+SearchInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClear: PropTypes.func,
+  onBack: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
